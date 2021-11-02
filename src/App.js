@@ -1,14 +1,15 @@
-import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PopularMovies from './Components/PopularMovies';
+import PopularMovies from "./Components/PopularMovies";
+import Navbar from "./Components/Navbar";
 function App() {
   return (
     <BrowserRouter>
-    <div>
-    <Switch>
-      <Route path="/" component={PopularMovies}></Route>
-    </Switch>
-    </div>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route path="/" component={PopularMovies}></Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
