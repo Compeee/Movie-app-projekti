@@ -1,27 +1,11 @@
 import "./PopularMovies.css";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from 'react'
 
-const POPULAR_MOVIES = "/discover/movie?sort_by=popularity.desc&";
+export default function PopularMovies(props) {
 
-export default function MovieCard() {
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    axios
-      .get(
-        process.env.REACT_APP_BASE_URL +
-          POPULAR_MOVIES +
-          process.env.REACT_APP_API_KEY
-      )
-      .then((res) => {
-        setMovies(res.data.results);
-      });
-  }, []);
-
-  console.log(movies);
   return (
     <div className="card-container">
-      {movies.map((movie) => (
+      {props.movies.map((movie) => (
         <div className="card" key={movie.id}>
           <div className="card-image">
             <img

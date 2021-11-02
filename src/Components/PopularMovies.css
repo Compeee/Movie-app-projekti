@@ -12,6 +12,7 @@
   margin: 1rem;
   border-radius: 3px;
   width: 250px;
+  background-color: grey;
   box-shadow: 0 0 5px rgb(84, 84, 84);
   align-self: normal;
 }

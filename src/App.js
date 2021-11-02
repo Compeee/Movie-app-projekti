@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PopularMovies from "./Components/PopularMovies";
+import HomePage from "./Components/HomePage";
 import Navbar from "./Components/Navbar";
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div>
         <Navbar />
         <Switch>
-          <Route path="/" component={PopularMovies}></Route>
+          <Route path="/" component={HomePage}></Route>
         </Switch>
       </div>
     </BrowserRouter>
