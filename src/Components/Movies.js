@@ -1,8 +1,7 @@
-import "./PopularMovies.css";
+import "./Movies.css";
 import React from 'react'
 
-export default function PopularMovies(props) {
-
+export default function Movies(props) {
   return (
     <div className="card-container">
       {props.movies.map((movie) => (
