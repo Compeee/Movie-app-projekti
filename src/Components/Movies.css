@@ -1,9 +1,6 @@
 .card-container {
-  margin-left: 275px;
-  margin-right: 275px;
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
   flex-wrap: wrap;
 }
 .card {
@@ -12,9 +9,8 @@
   margin: 0.2rem;
   border-radius: 3px;
   width: 225px;
-  background-color: grey;
+  background-color: lightgrey;
   box-shadow: 0 0 5px rgb(84, 84, 84);
-  align-self: normal;
 }
 .card-image img {
   max-width: 100%;

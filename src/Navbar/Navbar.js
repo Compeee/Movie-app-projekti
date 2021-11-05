@@ -1,27 +1,44 @@
 import React from "react";
-import {
-  NavMenu,
-  NavLink,
-  NavBtnLink,
-  Nav,
-} from "./NavbarElements";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 export default function Navbar() {
   return (
-    <Nav>
-      <NavLink to="/">
-        <h1>Home</h1>
-      </NavLink>
-      <NavMenu>
-        <NavBtnLink to="/movies">
-          Movies
-        </NavBtnLink>
-        <NavBtnLink to="/shows">
-          Shows
-        </NavBtnLink>
-        <NavBtnLink to="/upcoming">
-          Upcoming
-        </NavBtnLink>
-      </NavMenu>
-    </Nav>
+    <nav className="navbar">
+      <div class="home">
+        <Link to="/" className="link">
+          Home
+        </Link>
+      </div>
+      <Link className="toggle-button">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </Link>
+      <div className="navbar-links">
+        <ul>
+          <li>
+            <Link to="/popular" className="link">
+              Popular
+            </Link>
+          </li>
+          <li>
+            <Link to="/upcoming" className="link">
+              Upcoming
+            </Link>
+          </li>
+          <li>
+            <Link to="/movies" className="link">
+              All movies
+            </Link>
+          </li>
+          <li>
+            <Link to="/shows" className="link">
+              All shows
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }

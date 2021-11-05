@@ -6,21 +6,21 @@ export default function Movies(props) {
     // Maps out the movies into movie cards
     // Card displays poster, title, ratings and release date
     <div className="card-container">
-      {props.movies.map((movie) => (
-        <div className="card" key={movie.id}>
+      {props.data.map((content) => (
+        <div className="card" key={content.id}>
           <div className="card-image">
             <img
-              src={"https://image.tmdb.org/t/p/original" + movie.poster_path}
+              src={"https://image.tmdb.org/t/p/original" + content.poster_path}
               alt=""
             ></img>
           </div>
           <div>
             <div>
-              <b className="title">{movie.title}</b>
+              <b className="title">{content.title}</b>
             </div>
             <div className="ratingDate">
-              <span>{movie.vote_average}&#11088;</span>
-              <span>{movie.release_date}</span>
+              <span>{content.vote_average}&#11088;</span>
+              <span>{content.media_type}</span>
             </div>
           </div>
         </div>

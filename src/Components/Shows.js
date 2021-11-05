@@ -2,6 +2,8 @@ import React from 'react'
 import "./Movies.css"
 export default function Shows(props) {
     return (
+          // Maps out the shows into show cards
+          // card displays poster, name, ratings and first air date
         <div className="card-container">
         {props.shows.map((show) => (
           <div className="card" key={show.id}>

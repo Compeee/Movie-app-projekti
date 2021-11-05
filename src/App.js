@@ -1,21 +1,24 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomePage from "./Components/HomePage";
+import Popular from "./Components/Popular";
+import Home from "./Components/Home";
 import Navbar from "./Navbar/Navbar";
 import React from "react";
-import AllShows from "./Components/AllShows"
-import AllMovies from "./Components/AllMovies"
+import "./index.css";
+import AllShows from "./Components/AllShows";
+import AllMovies from "./Components/AllMovies";
 import Upcoming from "./Components/Upcoming";
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Navbar />
-        <div>
+      <Navbar />
+      <div className="parent">
+        <div className="content">
           <Switch>
             <Route path="/shows" component={AllShows}></Route>
             <Route path="/movies" component={AllMovies}></Route>
-            <Route path="/upcming" component={Upcoming}></Route>
-            <Route path="/" component={HomePage}></Route>
+            <Route path="/upcoming" component={Upcoming}></Route>
+            <Route path="/popular" component={Popular}></Route>
+            <Route path="/" component={Home}></Route>
           </Switch>
         </div>
       </div>

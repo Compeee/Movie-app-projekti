@@ -3,9 +3,9 @@ import { NavLink as Link } from "react-router-dom";
 
 export const Nav = styled.nav`
   background: #000;
-  height: 50px;
+  height: 75px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 0.5rem calc((35vw - 100px) / 2);
 `;
 
@@ -26,18 +26,17 @@ export const NavLink = styled(Link)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  margin-right: 10px;
 `;
 
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 24px;
 `;
 
 export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #256ce1;
+  border-radius: 10px;
+  background: black;
   padding: 10px 22px;
   color: #fff;
   border: none;
@@ -68,6 +67,7 @@ export const DropdownContent = styled.ul`
 `;
 export const Dropdown = styled.div`
   display: inline-block;
+  margin-left: 10px;
   position: relative;
   &:hover ${DropdownContent} {
     padding: 1rem;
@@ -90,5 +90,22 @@ export const NavInput = styled.input`
   border: 0.1rem #c0c0c0 solid;
   border-radius: 0.5rem;
   z-index: 998;
-`;
+`
 
+<Nav>
+<NavLink to="/">
+  <h1>Home</h1>
+</NavLink>
+<NavMenu>
+  <NavBtnLink to="/popular">Popular</NavBtnLink>
+  <NavBtnLink to="/upcoming">Upcoming</NavBtnLink>
+  <NavBtnLink to="/movies">All movies</NavBtnLink>
+  <NavBtnLink to="/shows">All shows</NavBtnLink>
+  <a href="/#" class="toggle-button">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+</NavMenu>
+</Nav>
