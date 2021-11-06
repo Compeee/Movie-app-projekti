@@ -3,38 +3,38 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 export default function Navbar() {
   return (
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <Link to="/" class="navbar-brand">
+    <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+      <Link to="/" className="navbar-brand">
         Home
       </Link>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#collapsibleNavbar"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <Link to="/popular" class="nav-link">
+      <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link to="/popular" className="nav-link">
               Popular
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/upcoming" class="nav-link">
+          <li className="nav-item">
+            <Link to="/upcoming" className="nav-link">
               Upcoming
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/movies" class="nav-link">
-              All movies
+          <li className="nav-item">
+            <Link to="/movies" className="nav-link">
+              All Movies
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/shows" class="nav-link">
-              All shows
+          <li className="nav-item">
+            <Link to="/shows" className="nav-link">
+              All Shows
             </Link>
           </li>
         </ul>

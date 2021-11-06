@@ -1,5 +1,5 @@
 import "./Movies.css";
-import React from 'react'
+import React from "react";
 
 export default function Movies(props) {
   return (
@@ -16,11 +16,13 @@ export default function Movies(props) {
           </div>
           <div>
             <div>
-              <b className="title">{content.title}</b>
+              <b className="title">
+                {!content.title ? content.name : content.title}
+              </b>
             </div>
             <div className="ratingDate">
               <span>{content.vote_average}&#11088;</span>
-              <span>{content.media_type}</span>
+              <span>{content.media_type === "movie" ? "Movie" : "Show"}</span>
             </div>
           </div>
         </div>
