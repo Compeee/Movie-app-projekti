@@ -25,7 +25,6 @@ export default function AllMovies() {
   return (
     <div>
       <Movies movies={movies} />
-
       <ReactPaginate
         previousLabel={"Previous"}
         nextLabel="Next"

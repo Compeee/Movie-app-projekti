@@ -1,7 +1,7 @@
 import "./Movies.css";
 import React from "react";
 
-export default function Movies(props) {
+export default function Trending(props) {
   return (
     // Maps out the movies into movie cards
     // Card displays poster, title, ratings and release date

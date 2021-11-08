@@ -1,7 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import "./Navbar.css";
 export default function Navbar() {
+  const [query, setQuery] = useState("");
+  const onChange = (event) => {
+    event.preventDefault();
+    setQuery(event.target.value);
+  };
+  const history = useHistory();
+  const handleHistory = () => {
+    history.push(`/search/${query}`)
+  }
   return (
     <nav className="navbar navbar-expand-md bg-dark navbar-dark">
       <Link to="/" className="navbar-brand">
@@ -15,6 +24,17 @@ export default function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
+      <div className="input-wrapper">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={query}
+          onChange={onChange}
+        ></input>
+        <button onClick={handleHistory}>
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
         <ul className="navbar-nav">
           <li className="nav-item">

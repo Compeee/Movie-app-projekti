@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Popular from "./Components/Popular";
 import Home from "./Components/Home";
 import Navbar from "./Navbar/Navbar";
+import Results from "./Components/Results";
 import React from "react";
 import "./index.css";
 import AllShows from "./Components/AllShows";
@@ -18,6 +19,7 @@ function App() {
             <Route path="/movies" component={AllMovies}></Route>
             <Route path="/upcoming" component={Upcoming}></Route>
             <Route path="/popular" component={Popular}></Route>
+            <Route path="/search/:query" component={Results}></Route>
             <Route path="/" component={Home}></Route>
           </Switch>
         </div>
