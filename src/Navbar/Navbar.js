@@ -47,16 +47,6 @@ export default function Navbar() {
               Upcoming
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/movies" className="nav-link">
-              All Movies
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/shows" className="nav-link">
-              All Shows
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
