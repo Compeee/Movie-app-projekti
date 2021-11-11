@@ -17,9 +17,9 @@ Release 1: 2021-11-15 features
 
 
 * User is able to see trending movies on the homepage
-* Responsive Navbar made using bootstrap
+* User is able to use the responsive navbar on different screensizes
 * User is able to search for movies/shows using the searchbar
-* Clicking search redirects user to /results/"query" page
-* Results page displays movies and shows found with the given search value
-* Pagination bar created with package "react-paginate"
+* User is able to click search which redirects user to /results/"query" page
+* User is able to see results of the search on the results page
+* User is able to use the react-paginate pagination bar 
 * User is able to see the most popular movies and shows by clicking the popular link in the navbar
