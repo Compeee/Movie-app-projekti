@@ -7,7 +7,7 @@ homepage, searchbar to search for the movies you want, sorting by category, addi
 
 API Documentation: https://www.themoviedb.org/documentation/api
 
-Heroku link:
+Heroku link: https://elokuva-app.herokuapp.com/
 
 **Release 1: 2021-11-15 features**
 
