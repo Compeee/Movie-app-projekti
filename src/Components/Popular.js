@@ -21,13 +21,18 @@ export default function Popular() {
   const [shows, setShows] = useState([]);
   useEffect(() => {
     // Gets all the movies sorted by popularity.
-    axios.get(POPULAR_MOVIES + `&page=${pageNum}`).then((res) => {
-      setMovies(res.data.results);
-    });
+    axios
+      .get(POPULAR_MOVIES + `&page=${pageNum}&original_language=en`)
+      .then((res) => {
+        setMovies(res.data.results);
+        console.log(res.data.results);
+      });
     // Gets all the tv shows sorted by popularity
-    axios.get(POPULAR_SHOWS + `&page=${sPageNum}`).then((res) => {
-      setShows(res.data.results);
-    });
+    axios
+      .get(POPULAR_SHOWS + `&page=${sPageNum}&original_language=en`)
+      .then((res) => {
+        setShows(res.data.results);
+      });
   }, [POPULAR_MOVIES, POPULAR_SHOWS, pageNum, sPageNum]);
 
   const handlePageClick = (data) => {
@@ -38,7 +43,8 @@ export default function Popular() {
   };
   return (
     <div>
-      <div>
+      <div className="col">
+        {" "}
         <h3>Movies</h3>
       </div>
       <Movies movies={movies} />
@@ -57,7 +63,11 @@ export default function Popular() {
         nextClassName={"page-item"}
         nextLinkClassName={"page-link"}
       />
-      <h3>Shows</h3>
+      <div className="col">
+        {" "}
+        <h3>Shows</h3>
+      </div>
+
       <Shows shows={shows} />
       <ReactPaginate
         previousLabel={"Previous"}

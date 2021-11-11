@@ -2,7 +2,7 @@ import React from "react";
 import Trending from "./Trending";
 import { useState, useEffect } from "react";
 import axios from "axios";
-// HomePage displays the most popular shows and movies
+// HomePage displays trending shows and movies
 export default function Home() {
   const TRENDING_CONTENT = "/trending/all/day?";
   const [trending, setTrending] = useState([]);
@@ -12,7 +12,8 @@ export default function Home() {
       .get(
         process.env.REACT_APP_BASE_URL +
           TRENDING_CONTENT +
-          process.env.REACT_APP_API_KEY
+          process.env.REACT_APP_API_KEY +
+          "&original_language=en"
       )
       .then((res) => {
         setTrending(res.data.results);
@@ -20,7 +21,9 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <h3>Trending</h3>
+      <div className="col">
+        <h3>Trending</h3>
+      </div>
       <Trending data={trending} />
     </div>
   );

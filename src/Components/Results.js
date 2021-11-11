@@ -11,13 +11,13 @@ export default function Results() {
   const SEARCH =
     process.env.REACT_APP_BASE_URL +
     `/search/multi?query=${query}&` +
-    process.env.REACT_APP_API_KEY;
+    process.env.REACT_APP_API_KEY +
+    "&original_language=en";
   useEffect(() => {
     axios.get(SEARCH + `&page=${pageNumber}`).then((res) => {
       setContent(res.data.results);
       setPages(res.data.total_pages);
     });
-
   }, [pageNumber, SEARCH]);
 
   const handlePageClick = (data) => {

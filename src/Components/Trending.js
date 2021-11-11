@@ -24,6 +24,10 @@ export default function Trending(props) {
               <span>{content.vote_average}&#11088;</span>
               <span>{content.media_type === "movie" ? "Movie" : "Show"}</span>
             </div>
+            <div className="movie-overview">
+              <h2>Overview: </h2>
+              <p>{content.overview}</p>
+            </div>
           </div>
         </div>
       ))}

@@ -1,5 +1,5 @@
 import "./Movies.css";
-import React from 'react'
+import React from "react";
 
 export default function Movies(props) {
   return (
@@ -21,6 +21,11 @@ export default function Movies(props) {
             <div className="ratingDate">
               <span>{movie.vote_average}&#11088;</span>
               <span>{movie.release_date}</span>
+            </div>
+            <div className="movie-overview">
+              <h2>Overview</h2>
+              <p>{movie.overview === "" ? "No overview available!" : movie.overview}</p> 
+              <button>Add to watchlist</button>
             </div>
           </div>
         </div>

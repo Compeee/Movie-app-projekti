@@ -1,5 +1,5 @@
 .navbar {
-  padding: 0.5rem calc((39vw - 100px) / 2);
+  padding: 0.5rem calc((39.5vw - 100px) / 2);
   display: flex;
   justify-content: space-between;
   align-items: center;
