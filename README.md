@@ -13,7 +13,7 @@ Heroku link:
 
 
 
-Release 1: 2021-11-15 features
+**Release 1: 2021-11-15 features**
 
 
 * User is able to see trending movies on the homepage
