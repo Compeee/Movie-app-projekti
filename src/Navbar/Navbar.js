@@ -9,8 +9,8 @@ export default function Navbar() {
   };
   const history = useHistory();
   const handleHistory = () => {
-    history.push(`/search/${query}`)
-  }
+    history.push(`/search/${query}`);
+  };
   return (
     <nav className="navbar navbar-expand-md bg-dark navbar-dark">
       <Link to="/" className="navbar-brand">
@@ -24,15 +24,22 @@ export default function Navbar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="input-wrapper">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={query}
-          onChange={onChange}
-        ></input>
-        <button onClick={handleHistory}>
-          <i className="fa fa-search" aria-hidden="true"></i>
+      <div className="input-group">
+        <div className="form-outline">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Search..."
+            value={query}
+            onChange={onChange}
+          ></input>
+        </div>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={handleHistory}
+        >
+          <i className="fa fa-search"></i>
         </button>
       </div>
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
