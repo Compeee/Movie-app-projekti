@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="input-group">
         <div className="form-outline">
           <input
-            class="form-control"
+            className="form-control"
             type="text"
             placeholder="Search..."
             value={query}
