@@ -1,7 +1,8 @@
 import "./Movies.css";
-import React from "react";
-
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 export default function Trending(props) {
+  const { addToWatchlist, watchlist } = useContext(GlobalContext);
   return (
     // Maps out the movies into movie cards
     // Card displays poster, title, ratings and release date
@@ -27,6 +28,15 @@ export default function Trending(props) {
             <div className="movie-overview">
               <h2>Overview: </h2>
               <p>{content.overview}</p>
+              <button
+                className="btn btn-primary"
+                onClick={() => addToWatchlist(content)}
+                disabled={watchlist.find((m) =>
+                  m.id === content.id ? true : false
+                )}
+              >
+                Add to watchlist
+              </button>
             </div>
           </div>
         </div>

@@ -19,4 +19,4 @@ Heroku link: https://elokuva-app.herokuapp.com/
 - User is able to use the react-paginate pagination bar
 - User is able to see the most popular movies and shows by clicking the popular link in the navbar
 - User is able to hover over movies and shows to see their overviews
-- User is able to add movies to watchlist and they are saved to localstorage, no way to see the items yet and only works in popular page
+- User is able to add movies to watchlist, which are saved into localstorage, no way for the user to see them yet.

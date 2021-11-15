@@ -1,6 +1,8 @@
-import React from "react";
 import "./Movies.css";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 export default function Shows(props) {
+  const { addToWatchlist, watchlist } = useContext(GlobalContext);
   return (
     // Maps out the shows into show cards
     // card displays poster, name, ratings and first air date
@@ -28,6 +30,15 @@ export default function Shows(props) {
                   ? "No overview available!"
                   : show.overview}
               </p>
+              <button
+                className="btn btn-primary"
+                onClick={() => addToWatchlist(show)}
+                disabled={watchlist.find((m) =>
+                  m.id === show.id ? true : false
+                )}
+              >
+                Add to watchlist
+              </button>
             </div>
           </div>
         </div>
