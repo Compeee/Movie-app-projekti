@@ -54,6 +54,11 @@ export default function Navbar() {
               Upcoming
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/watchlist" className="nav-link">
+              Watchlist
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

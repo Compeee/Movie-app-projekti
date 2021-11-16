@@ -20,3 +20,9 @@ Heroku link: https://elokuva-app.herokuapp.com/
 - User is able to see the most popular movies and shows by clicking the popular link in the navbar
 - User is able to hover over movies and shows to see their overviews
 - User is able to add movies to watchlist, which are saved into localstorage, no way for the user to see them yet.
+
+**Release 2: 2021-11-29 features**
+
+- User is able to go on the watchlist page from the link in navbar
+- User is able to see all the contents of the watchlist
+- User is able to remove items from the watchlist

@@ -7,6 +7,7 @@ import React from "react";
 import "./index.css";
 import Upcoming from "./Components/Upcoming";
 import { GlobalProvider } from "./context/GlobalState";
+import Watchlist from "./Components/Watchlist";
 function App() {
   return (
     <GlobalProvider>
@@ -17,6 +18,7 @@ function App() {
             <Switch>
               <Route path="/upcoming" component={Upcoming}></Route>
               <Route path="/popular" component={Popular}></Route>
+              <Route path="/watchlist" component={Watchlist}></Route>
               <Route path="/search/:query" component={Results}></Route>
               <Route path="/" component={Home}></Route>
             </Switch>

@@ -19,9 +19,13 @@ export const GlobalProvider = (props) => {
     dispatch({ type: "ADD_ITEM_TO_WATCHLIST", payload: item });
   };
 
+  const removeFromWatchlist = (id) => {
+    dispatch({ type: "REMOVE_ITEM_FROM_WATCHLIST", payload: id });
+  };
+
   return (
     <GlobalContext.Provider
-      value={{ watchlist: state.watchlist, addToWatchlist }}
+      value={{ watchlist: state.watchlist, addToWatchlist, removeFromWatchlist }}
     >
       {props.children}
     </GlobalContext.Provider>
