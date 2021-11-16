@@ -31,7 +31,7 @@ export default function Watchlist() {
                 <h2>Overview: </h2>
                 <p>{content.overview}</p>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-danger"
                   onClick={() => removeFromWatchlist(content.id)}
                 >
                   Remove from watchlist
