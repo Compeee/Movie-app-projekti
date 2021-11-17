@@ -7,6 +7,8 @@ const API_KEY_VALUE = process.env.APP_API_KEY_VALUE;
 const API_KEY_NAME = process.env.APP_API_KEY_NAME;
 const API_BASE_URL = process.env.APP_BASE_URL;
 
+// Routes for all the api calls used in the app
+
 router.get("/", async (req, res) => {
   try {
     const params = new URLSearchParams({
