@@ -56,6 +56,7 @@ router.get("/popularshows", async (req, res) => {
       "get",
       `${API_BASE_URL}` + "/discover/tv?sort_by=popularity.desc&" + `${params}`
     );
+    console.log(params);
     const data = apiRes.body;
     res.status(200).json(data);
   } catch (error) {
@@ -71,7 +72,7 @@ router.get("/search", async (req, res) => {
 
     const apiRes = await needle(
       "get",
-      `${API_BASE_URL}` + "/search/multi?sort_by=popularity.desc&" + `${params}`
+      `${API_BASE_URL}` + "/search/multi?" + `${params}`
     );
     const data = apiRes.body;
     res.status(200).json(data);

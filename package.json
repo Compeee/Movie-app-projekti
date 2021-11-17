@@ -1,0 +1,19 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "Name: Eero Kaarnalehto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Compeee/5G00EV06-3001-kaarnalehto-eero-projekti.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Compeee/5G00EV06-3001-kaarnalehto-eero-projekti/issues"
+  },
+  "homepage": "https://github.com/Compeee/5G00EV06-3001-kaarnalehto-eero-projekti#readme"
+}
