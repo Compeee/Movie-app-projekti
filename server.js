@@ -9,8 +9,6 @@ const app = express();
 
 const routes = require("./backend/routes/index");
 
-app.use("/api", require("./backend/routes/index"));
-
 app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
