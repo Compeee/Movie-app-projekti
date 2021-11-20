@@ -13,16 +13,18 @@ function App() {
   return (
     <GlobalProvider>
       <BrowserRouter>
-        <Navbar />
-        <div className="parent">
-          <div className="content">
-            <Switch>
-              <Route path="/upcoming" component={Upcoming}></Route>
-              <Route path="/popular" component={Popular}></Route>
-              <Route path="/watchlist" component={Watchlist}></Route>
-              <Route path="/search/:query" component={Results}></Route>
-              <Route path="/" component={Home}></Route>
-            </Switch>
+        <div className="wrapper">
+          <Navbar />
+          <div className="parent">
+            <div className="content">
+              <Switch>
+                <Route path="/upcoming" component={Upcoming}></Route>
+                <Route path="/popular" component={Popular}></Route>
+                <Route path="/watchlist" component={Watchlist}></Route>
+                <Route path="/search/:query" component={Results}></Route>
+                <Route path="/" component={Home}></Route>
+              </Switch>
+            </div>
           </div>
         </div>
         <Footer />
