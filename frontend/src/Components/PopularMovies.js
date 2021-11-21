@@ -11,13 +11,26 @@ export default function Popular() {
   const [pageNum, setPageNum] = useState(1);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+
+  const makeGenreUrl = (selectedGenres) => {
+    if (selectedGenres.length < 1) {
+      return "";
+    }
+    const genreIds = selectedGenres.map((g) => g.id);
+    return genreIds.reduce((acc, curr) => acc + "," + curr);
+  };
+
+  const genreUrl = makeGenreUrl(selectedGenres);
+
   useEffect(() => {
     // Gets all the movies sorted by popularity.
-    axios.get(`/api/popularmovies?page=${pageNum}`).then((res) => {
-      setMovies(res.data.results);
-      setPages(res.data.total_pages);
-    });
-  }, [pageNum]);
+    axios
+      .get(`/api/popularmovies?page=${pageNum}&with_genres=${genreUrl}`)
+      .then((res) => {
+        setMovies(res.data.results);
+        setPages(res.data.total_pages);
+      });
+  }, [genreUrl, pageNum]);
 
   const handlePageClick = (data) => {
     setPageNum(data.selected + 1);

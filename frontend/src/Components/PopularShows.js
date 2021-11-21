@@ -11,13 +11,24 @@ export default function Popular() {
   const [shows, setShows] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+
+  const makeGenreUrl = (selectedGenres) => {
+    if (selectedGenres.length < 1) {
+      return "";
+    }
+    const genreIds = selectedGenres.map((g) => g.id);
+    return genreIds.reduce((acc, curr) => acc + "," + curr);
+  };
+
+  const genreUrl = makeGenreUrl(selectedGenres);
+
   useEffect(() => {
     // Gets all the tv shows sorted by popularity
-    axios.get(`/api/popularshows?page=${pageNum}`).then((res) => {
+    axios.get(`/api/popularshows?page=${pageNum}&with_genres=${genreUrl}`).then((res) => {
       setShows(res.data.results);
       setPages(res.data.total_pages);
     });
-  }, [pageNum]);
+  }, [genreUrl, pageNum]);
   const handlePageClick = (data) => {
     setPageNum(data.selected + 1);
   };
