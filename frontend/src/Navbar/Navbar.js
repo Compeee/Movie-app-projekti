@@ -45,8 +45,13 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/popular" className="nav-link">
-              Popular
+            <Link to="/Movies" className="nav-link">
+              Movies
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/Shows" className="nav-link">
+              Shows
             </Link>
           </li>
           <li className="nav-item">

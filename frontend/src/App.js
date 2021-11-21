@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Popular from "./Components/Popular";
+import PopularMovies from "./Components/PopularMovies";
+import PopularShows from "./Components/PopularShows";
 import Home from "./Components/Home";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
@@ -19,7 +20,8 @@ function App() {
             <div className="content">
               <Switch>
                 <Route path="/upcoming" component={Upcoming}></Route>
-                <Route path="/popular" component={Popular}></Route>
+                <Route path="/movies" component={PopularMovies}></Route>
+                <Route path="/shows" component={PopularShows}></Route>
                 <Route path="/watchlist" component={Watchlist}></Route>
                 <Route path="/search/:query" component={Results}></Route>
                 <Route path="/" component={Home}></Route>
