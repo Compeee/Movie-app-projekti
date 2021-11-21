@@ -28,3 +28,5 @@ Heroku link: https://elokuva-app.herokuapp.com/
 - User is able to remove items from the watchlist
 - User is able to go on the upcoming page from the link in navbar
 - User is able to see upcoming movies on the page
+- User is able to go through all the movies by clicking the movies link in the navbar, sorted by popularity
+- User is able to go through all the shows by clicking the shows link in the navbar, sorted by popularity
