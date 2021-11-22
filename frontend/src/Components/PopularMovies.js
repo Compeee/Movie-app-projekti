@@ -12,6 +12,8 @@ export default function Popular() {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
 
+  // with_genres accepts the genres like this "genre.id, genre1.id, genre2.id..."
+  // Function goes through the selectedGenres and creates a suitable string.
   const makeGenreUrl = (selectedGenres) => {
     if (selectedGenres.length < 1) {
       return "";
@@ -23,7 +25,7 @@ export default function Popular() {
   const genreUrl = makeGenreUrl(selectedGenres);
 
   useEffect(() => {
-    // Gets all the movies sorted by popularity.
+    // Gets all the movies sorted by popularity, and by the genre u want
     axios
       .get(`/api/popularmovies?page=${pageNum}&with_genres=${genreUrl}`)
       .then((res) => {
@@ -37,9 +39,6 @@ export default function Popular() {
   };
   return (
     <div>
-      <div className="col">
-        <h3>Movies</h3>
-      </div>{" "}
       <Genres
         type="movie"
         selectedGenres={selectedGenres}

@@ -33,6 +33,7 @@ export default function Shows(props) {
               <button
                 className="btn btn-primary"
                 onClick={() => addToWatchlist(show)}
+                // Button is disabled if the show is already found in the watchlist
                 disabled={watchlist.find((m) =>
                   m.id === show.id ? true : false
                 )}

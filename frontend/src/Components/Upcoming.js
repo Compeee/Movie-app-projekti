@@ -16,14 +16,15 @@ export default function Upcoming() {
     });
   }, [pageNum]);
 
+  // Clicking the button in pagination bar sets current page to the one selected.
   const handlePageClick = (data) => {
     setPageNum(data.selected + 1);
   };
+
   return (
     <div>
       <div className="col">
-        {" "}
-        <h3>Movies</h3>
+        <h3>Upcoming movies</h3>
       </div>
       <Movies movies={movies} />
       <ReactPaginate

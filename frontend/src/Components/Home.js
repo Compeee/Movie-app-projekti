@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <div className="col">
-        <h3>Trending</h3>
+        <h3>Trending now!</h3>
       </div>
       <Trending data={trending} />
     </div>

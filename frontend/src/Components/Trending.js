@@ -26,11 +26,12 @@ export default function Trending(props) {
               <span>{content.media_type === "movie" ? "Movie" : "Show"}</span>
             </div>
             <div className="movie-overview">
-              <h2>Overview: </h2>
+              <h2>Overview</h2>
               <p>{content.overview}</p>
               <button
                 className="btn btn-primary"
                 onClick={() => addToWatchlist(content)}
+                // button disabled if show/movie found in watchlist already.
                 disabled={watchlist.find((m) =>
                   m.id === content.id ? true : false
                 )}

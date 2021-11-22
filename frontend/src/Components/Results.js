@@ -8,6 +8,7 @@ export default function Results() {
   const [content, setContent] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [pages, setPages] = useState(0);
+  // Gets all the tv shows and movies with the given search query, pagenumber for pagination.
   useEffect(() => {
     axios.get(`/api/search?query=${query}&page=${pageNumber}`).then((res) => {
       setContent(res.data.results);

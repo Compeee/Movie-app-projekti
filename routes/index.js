@@ -9,13 +9,13 @@ const API_BASE_URL = process.env.APP_BASE_URL;
 
 // Routes for all the api calls used in the app
 
+// Homepage route, gets the trending movies / shows.
 router.get("/", async (req, res) => {
   try {
     const params = new URLSearchParams({
       [API_KEY_NAME]: API_KEY_VALUE,
       ...url.parse(req.url, true).query,
     });
-
     const apiRes = await needle(
       "get",
       `${API_BASE_URL}` + "/trending/all/day?" + `${params}`
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error });
   }
 });
-
+// Gets all the movies, sorted by popularity
 router.get("/popularmovies", async (req, res) => {
   try {
     const params = new URLSearchParams({
@@ -46,7 +46,7 @@ router.get("/popularmovies", async (req, res) => {
     res.status(500).json({ error });
   }
 });
-
+// Gets all the tv shows, sorted by popularity
 router.get("/popularshows", async (req, res) => {
   try {
     const params = new URLSearchParams({
@@ -65,6 +65,7 @@ router.get("/popularshows", async (req, res) => {
     res.status(500).json({ error });
   }
 });
+// Route for searching through movies and tv shows
 router.get("/search", async (req, res) => {
   try {
     const params = new URLSearchParams({
@@ -82,6 +83,7 @@ router.get("/search", async (req, res) => {
     res.status(500).json({ error });
   }
 });
+// Route to get upcoming movies
 router.get("/upcoming", async (req, res) => {
   try {
     const params = new URLSearchParams({
@@ -91,9 +93,7 @@ router.get("/upcoming", async (req, res) => {
 
     const apiRes = await needle(
       "get",
-      `${API_BASE_URL}` +
-        "/movie/upcoming?sort_by=popularity.desc&" +
-        `${params}`
+      `${API_BASE_URL}` + "/movie/upcoming?" + `${params}`
     );
     const data = apiRes.body;
     res.status(200).json(data);
@@ -101,6 +101,7 @@ router.get("/upcoming", async (req, res) => {
     res.status(500).json({ error });
   }
 });
+// Route to get all the movie genres
 router.get("/moviegenres", async (req, res) => {
   try {
     const params = new URLSearchParams({
@@ -118,6 +119,7 @@ router.get("/moviegenres", async (req, res) => {
     res.status(500).json({ error });
   }
 });
+// Route to get all the tv show genres
 router.get("/showgenres", async (req, res) => {
   try {
     const params = new URLSearchParams({

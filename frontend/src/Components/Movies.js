@@ -33,6 +33,7 @@ export default function Movies(props) {
               <button
                 className="btn btn-primary"
                 onClick={() => addToWatchlist(movie)}
+                // button is disabled if the movie is already found in the watchlist.
                 disabled={watchlist.find((m) =>
                   m.id === movie.id ? true : false
                 )}

@@ -12,6 +12,8 @@ export default function Popular() {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
 
+  // with_genres accepts the genres like this "genre.id, genre1.id, genre2.id..."
+  // Function goes through the selectedGenres and creates a suitable string.
   const makeGenreUrl = (selectedGenres) => {
     if (selectedGenres.length < 1) {
       return "";
@@ -23,21 +25,19 @@ export default function Popular() {
   const genreUrl = makeGenreUrl(selectedGenres);
 
   useEffect(() => {
-    // Gets all the tv shows sorted by popularity
-    axios.get(`/api/popularshows?page=${pageNum}&with_genres=${genreUrl}`).then((res) => {
-      setShows(res.data.results);
-      setPages(res.data.total_pages);
-    });
+    // Gets all the tv shows sorted by popularity and the genres you want
+    axios
+      .get(`/api/popularshows?page=${pageNum}&with_genres=${genreUrl}`)
+      .then((res) => {
+        setShows(res.data.results);
+        setPages(res.data.total_pages);
+      });
   }, [genreUrl, pageNum]);
   const handlePageClick = (data) => {
     setPageNum(data.selected + 1);
   };
   return (
     <div>
-      <div className="col">
-        {" "}
-        <h3>Shows</h3>
-      </div>
       <Genres
         type="tv"
         selectedGenres={selectedGenres}
