@@ -5,7 +5,9 @@ export default function Watchlist() {
   const { watchlist, removeFromWatchlist } = useContext(GlobalContext);
   return (
     <div>
-      <h2 className="h2">Watchlist</h2>
+      <div className="col">
+        <h3>Watchlist</h3>
+      </div>
       <div className="card-container">
         {watchlist.map((content) => (
           <div className="card" key={content.id}>

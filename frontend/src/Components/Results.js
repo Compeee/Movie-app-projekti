@@ -21,6 +21,7 @@ export default function Results() {
   };
   return (
     <div>
+      <div className="col">{<h3>Results of {query}:</h3>}</div>
       <Trending data={content} />
       <ReactPaginate
         previousLabel={"Previous"}

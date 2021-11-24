@@ -11,7 +11,7 @@ export default function Navbar() {
   const history = useHistory();
   // Clicking the search button redirects you to the results page
   const handleHistory = () => {
-    history.push(`/search/query=${query}`);
+    history.push(`/search/${query}`);
   };
   return (
     <nav className="navbar navbar-expand-md bg-dark navbar-dark">
