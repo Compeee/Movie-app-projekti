@@ -1,49 +1,68 @@
-import "./Movies.css";
-import React, { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
-export default function Movies(props) {
-  const { addToWatchlist, watchlist } = useContext(GlobalContext);
+import React from "react";
+import MovieCard from "./MovieCard";
+import ReactPaginate from "react-paginate";
+import Genres from "./Genres";
+import { useState, useEffect } from "react";
+import axios from "axios";
+// HomePage displays the most popular shows and movies
+export default function Movies() {
+  const [pages, setPages] = useState(10);
+  const [movies, setMovies] = useState([]);
+  const [pageNum, setPageNum] = useState(1);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
+
+  // with_genres accepts the genres like this "genre.id, genre1.id, genre2.id..."
+  // Function goes through the selectedGenres and creates a suitable string.
+  const makeGenreUrl = (selectedGenres) => {
+    if (selectedGenres.length < 1) {
+      return "";
+    }
+    const genreIds = selectedGenres.map((g) => g.id);
+    return genreIds.reduce((acc, curr) => acc + "," + curr);
+  };
+
+  const genreUrl = makeGenreUrl(selectedGenres);
+
+  useEffect(() => {
+    // Gets all the movies sorted by popularity, and by the genre u want
+    axios
+      .get(`/api/popularmovies?page=${pageNum}&with_genres=${genreUrl}`)
+      .then((res) => {
+        setMovies(res.data.results);
+        setPages(res.data.total_pages);
+      });
+  }, [genreUrl, pageNum]);
+
+  const handlePageClick = (data) => {
+    setPageNum(data.selected + 1);
+  };
   return (
-    // Maps out the movies into movie cards
-    // Card displays poster, title, ratings and release date
-    <div className="card-container">
-      {props.movies.map((movie) => (
-        <div className="card" key={movie.id}>
-          <div className="card-image">
-            <img
-              src={"https://image.tmdb.org/t/p/original" + movie.poster_path}
-              alt=""
-            ></img>
-          </div>
-          <div>
-            <div>
-              <b className="title">{movie.title}</b>
-            </div>
-            <div className="ratingDate">
-              <span>{movie.vote_average}&#11088;</span>
-              <span>{movie.release_date}</span>
-            </div>
-            <div className="movie-overview">
-              <h2>Overview</h2>
-              <p>
-                {movie.overview === ""
-                  ? "No overview available!"
-                  : movie.overview}
-              </p>
-              <button
-                className="btn btn-primary"
-                onClick={() => addToWatchlist(movie)}
-                // button is disabled if the movie is already found in the watchlist.
-                disabled={watchlist.find((m) =>
-                  m.id === movie.id ? true : false
-                )}
-              >
-                Add to watchlist
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div>
+      <Genres
+        type="movie"
+        selectedGenres={selectedGenres}
+        genres={genres}
+        setGenres={setGenres}
+        setSelectedGenres={setSelectedGenres}
+        setPage={setPageNum}
+      />
+      <MovieCard movies={movies} />
+      <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel="Next"
+        onPageChange={handlePageClick}
+        pageCount={pages}
+        marginPagesDisplayed={3}
+        pageRangeDisplayed={5}
+        containerClassName={"pagination justify-content-center"}
+        pageClassName={"page-item"}
+        pageLinkClassName={"page-link"}
+        previousLinkClassName={"page-link"}
+        previousClassName={"page-item"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+      />
     </div>
   );
 }

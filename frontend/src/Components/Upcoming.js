@@ -1,5 +1,5 @@
 import React from "react";
-import Movies from "./Movies";
+import MovieCard from "./MovieCard";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -26,7 +26,7 @@ export default function Upcoming() {
       <div className="col">
         <h3>Upcoming movies</h3>
       </div>
-      <Movies movies={movies} />
+      <MovieCard movies={movies} />
       <ReactPaginate
         previousLabel={"Previous"}
         nextLabel="Next"
