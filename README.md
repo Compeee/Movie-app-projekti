@@ -9,6 +9,8 @@ API Documentation: https://www.themoviedb.org/documentation/api
 
 Heroku link: https://elokuva-app.herokuapp.com/
 
+Screencast: https://www.youtube.com/watch?v=oHOPB_gLwzM
+
 **Release 1: 2021-11-15 features**
 
 - User is able to see trending movies on the homepage
