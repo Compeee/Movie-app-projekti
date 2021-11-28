@@ -35,3 +35,4 @@ Screencast: https://www.youtube.com/watch?v=oHOPB_gLwzM
 - User is able to filter movies and shows by category by selecting the categories they want
 
 **Known Bugs**
+- Not really a bug, but TMDB API's upcoming movies api call returns some movies that have released months ago.
