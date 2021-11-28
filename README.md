@@ -33,3 +33,5 @@ Screencast: https://www.youtube.com/watch?v=oHOPB_gLwzM
 - User is able to go through all the movies by clicking the movies link in the navbar, sorted by popularity
 - User is able to go through all the shows by clicking the shows link in the navbar, sorted by popularity
 - User is able to filter movies and shows by category by selecting the categories they want
+
+**Known Bugs**
