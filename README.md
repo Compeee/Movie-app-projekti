@@ -7,7 +7,7 @@ homepage, searchbar to search for the movies you want, sorting by category, addi
 
 API Documentation: https://www.themoviedb.org/documentation/api
 
-Heroku link: https://elokuva-app.herokuapp.com/
+Link to app: https://movie-app-test-vgjg.onrender.com/
 
 Screencast: https://www.youtube.com/watch?v=oHOPB_gLwzM
 
